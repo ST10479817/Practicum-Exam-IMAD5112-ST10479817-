@@ -12,6 +12,13 @@ class DetailedView : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_detailed_view)
 
+        val song = intent.getStringExtra("song" )
+        val Artists = intent.getStringExtra("Artists" )
+        val Comments = intent.getStringExtra("Comments")
+        val Ratings = intent.getIntArrayExtra("Ratings")
+
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

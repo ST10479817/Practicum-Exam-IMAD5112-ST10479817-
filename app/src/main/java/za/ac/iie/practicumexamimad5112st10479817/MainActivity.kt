@@ -42,28 +42,38 @@ class MainActivity : AppCompatActivity() {
 
 
 
-                val songTitles = edtSongTitles.toString().trim()
-                val artistNames = edtArtistNames.toString().trim()
-                val userComments = edtUserComments.toString().trim()
-                val ratingNumber = edtRatings.toString().trim()
+                val songTitles = edtSongTitles.text.toString().trim()
+                val artistNames = edtArtistNames.text.toString().trim()
+                val userComments = edtUserComments.text.toString().trim()
+                val ratingNumber = edtRatings.text.toString().trim()
 
                 val ratingScore = ratingNumber.toIntOrNull()
 
 
 
-            if (count < arraySongs.size && artistNames.isNotEmpty() && userComments.isNotEmpty() && ratingNumber != null && ratingScore in 1..5 && songTitles.isNotEmpty()){
+            if (count in 0..4 && songTitles.isNotEmpty() && artistNames.isNotEmpty() && userComments.isNotEmpty() && ratingScore != null && ratingScore in 1..5 && songTitles.isNotEmpty()){
                 arraySongs[count] = songTitles
                 arrayArtists[count] = artistNames
                 arrayComments[count] = userComments
-                arrayRatings[count] = ratingNumber.toIntOrNull() ?:0
+                arrayRatings[count] = ratingScore
 
                 count++
 
-                text.text = ""
+                text.text = "You ${count}/4"
 
-            } else{
-                    text.text = "Please full in all the options"
+                edtSongTitles.text.clear()
+                edtArtistNames.text.clear()
+                edtUserComments.text.clear()
+                edtRatings.text.clear()
+
+            } else if(count >4){
+                    text.text = "Please full in all the options or please insure that your rating is between 1 and 5."
                 }
+
+            if (count == 0){
+                text.text = "Please enter in one song"
+                return@setOnClickListener
+            }
 
 
         }
