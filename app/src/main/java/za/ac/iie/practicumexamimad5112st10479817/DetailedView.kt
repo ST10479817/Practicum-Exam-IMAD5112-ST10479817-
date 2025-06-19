@@ -12,9 +12,9 @@ class DetailedView : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_detailed_view)
 
-        val song = intent.getStringExtra("song" )
-        val Artists = intent.getStringExtra("Artists" )
-        val Comments = intent.getStringExtra("Comments")
+        val song = intent.getStringArrayExtra("song" )
+        val Artists = intent.getStringArrayExtra("Artists" )
+        val Comments = intent.getStringArrayExtra("Comments")
         val Ratings = intent.getIntArrayExtra("Ratings")
 
 

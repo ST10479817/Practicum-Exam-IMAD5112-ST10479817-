@@ -11,65 +11,73 @@
         android:id="@+id/textView4"
         android:layout_width="102dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintTop_toTopOf="@+id/guideline8"
-        tools:layout_editor_absoluteX="103dp" />
+        android:layout_marginStart="1dp"
+        android:text="Artist Name"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="101dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintTop_toTopOf="@+id/guideline8"
-        tools:layout_editor_absoluteX="1dp" />
+        android:layout_marginEnd="1dp"
+        android:text="Song Title"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="102dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintTop_toTopOf="@+id/guideline8"
-        tools:layout_editor_absoluteX="308dp" />
+        android:layout_marginStart="1dp"
+        android:text="Comments"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="101dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintTop_toTopOf="@+id/guideline8"
-        tools:layout_editor_absoluteX="206dp" />
+        android:layout_marginStart="2dp"
+        android:text="Rating(1-5)"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtSongs"
+        android:layout_width="101dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="151dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtArtist"
+        android:layout_width="102dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="151dp" />
+        app:layout_constraintStart_toEndOf="@+id/txtSongs"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtRating"
+        android:layout_width="101dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="160dp" />
+        app:layout_constraintStart_toEndOf="@+id/txtArtist"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/txtComment"
+        android:layout_width="99dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="1dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="237dp" />
+        app:layout_constraintStart_toEndOf="@+id/txtRating"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"

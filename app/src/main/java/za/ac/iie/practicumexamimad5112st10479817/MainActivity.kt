@@ -66,12 +66,16 @@ class MainActivity : AppCompatActivity() {
                 edtUserComments.text.clear()
                 edtRatings.text.clear()
 
-            } else if(count >4){
+            } else {
                     text.text = "Please full in all the options or please insure that your rating is between 1 and 5."
                 }
 
             if (count == 0){
                 text.text = "Please enter in one song"
+                return@setOnClickListener
+            }
+            if (count == 4){
+                text.text = "You are finished"
                 return@setOnClickListener
             }
 
