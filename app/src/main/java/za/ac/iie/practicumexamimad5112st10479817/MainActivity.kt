@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
                 count++
 
-                text.text = "You ${count}/4"
+                text.text = "You have added ${count} out of 4"
 
                 edtSongTitles.text.clear()
                 edtArtistNames.text.clear()
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             if (count == 4){
-                text.text = "You are finished"
+                text.text = "All 4 songs has been added."
                 return@setOnClickListener
             }
 
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, DetailedView ::class.java)
 
-            intent.putExtra("Song", arraySongs)
+            intent.putExtra("Songs", arraySongs)
             intent.putExtra("Artists", arrayArtists)
             intent.putExtra("Comments", arrayComments)
             intent.putExtra("Ratings", arrayRatings)

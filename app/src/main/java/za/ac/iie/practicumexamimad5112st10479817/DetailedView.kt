@@ -1,6 +1,7 @@
 package za.ac.iie.practicumexamimad5112st10479817
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,10 +13,40 @@ class DetailedView : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_detailed_view)
 
-        val song = intent.getStringArrayExtra("song" )
+        val Songs = intent.getStringArrayExtra("Songs" )
         val Artists = intent.getStringArrayExtra("Artists" )
         val Comments = intent.getStringArrayExtra("Comments")
         val Ratings = intent.getIntArrayExtra("Ratings")
+
+        val txtSong = findViewById<TextView>(R.id.txtSongs)
+        val txtArtist = findViewById<TextView>(R.id.txtArtist)
+        val txtRating = findViewById<TextView>(R.id.txtRating)
+        val txtComment = findViewById<TextView>(R.id.txtComment)
+
+        val txtSongBuilder = StringBuilder()
+        val txtArtistBuilder = StringBuilder()
+        val txtRatingBuilder = StringBuilder()
+        val txtCommentBuilder = StringBuilder()
+
+        if (Songs != null && Comments != null && Artists != null && Ratings != null) {
+            for (i in Songs.indices) {
+                if (Songs[i].isNotBlank()) {
+
+                    txtSongBuilder.append("${Songs[i]}\n")
+                    txtArtistBuilder.append("${Artists[i]}\n")
+                    txtRatingBuilder.append("${Ratings[i]}\n")
+                    txtCommentBuilder.append("${Comments[i]}\n")
+
+
+                }
+            }
+        }
+
+        txtSong.text = txtSongBuilder.toString()
+        txtArtist.text = txtArtistBuilder.toString()
+        txtRating.text = txtRatingBuilder.toString()
+        txtComment.text = txtCommentBuilder.toString()
+
 
 
 
