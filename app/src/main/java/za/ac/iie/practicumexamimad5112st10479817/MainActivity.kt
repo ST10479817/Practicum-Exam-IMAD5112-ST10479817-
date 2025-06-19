@@ -1,5 +1,6 @@
 package za.ac.iie.practicumexamimad5112st10479817
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -11,12 +12,12 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    private val arraySongs = Array(10){""}
+    private val arraySongs = Array(4){""}
     private val arrayArtists = Array(4){""}
     private val arrayRatings = IntArray(4)
     private val arrayComments = Array(4){""}
 
-    private var count = 1
+    private var count = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,54 +37,47 @@ class MainActivity : AppCompatActivity() {
         val text = findViewById<TextView>(R.id.text02)
 
         btnAddingToPlaylist.setOnClickListener {
-            var text1 = ""
-
-            val ratingScore = edtRatings.toInt()
-
-            for (count)
-
-
-
-            for (i in arraySongs.indices){
-
-
-
-
-                val songTitles = edtSongTitles.text.trim()
-                val artistNames = edtArtistNames.text.trim()
-                val userComments = edtUserComments.text.trim()
 
 
 
 
 
+                val songTitles = edtSongTitles.toString().trim()
+                val artistNames = edtArtistNames.toString().trim()
+                val userComments = edtUserComments.toString().trim()
+                val ratingNumber = edtRatings.toString().trim()
+
+                val ratingScore = ratingNumber.toIntOrNull()
 
 
 
+            if (count < arraySongs.size && artistNames.isNotEmpty() && userComments.isNotEmpty() && ratingNumber != null && ratingScore in 1..5 && songTitles.isNotEmpty()){
+                arraySongs[count] = songTitles
+                arrayArtists[count] = artistNames
+                arrayComments[count] = userComments
+                arrayRatings[count] = ratingNumber.toIntOrNull() ?:0
 
-            if (songTitles != null || artistNames != null || userComments != null){
-                arraySongs[i] = songTitles.toString()
-                arrayArtists[i] = artistNames.toString()
-                arrayComments[i] = userComments.toString()
+                count++
 
-
-
-                text1 += "${arraySongs[i]} \n"
-
+                text.text = ""
 
             } else{
-                if (songTitles == null && artistNames == null && userComments == null ){
-                    text.text = "Nothing"
+                    text.text = "Please full in all the options"
                 }
-            }
-            }
-            text.text = text1
-
 
 
         }
 
         btnNextScreen.setOnClickListener {
+
+            val intent = Intent(this, DetailedView ::class.java)
+
+            intent.putExtra("Song", arraySongs)
+            intent.putExtra("Artists", arrayArtists)
+            intent.putExtra("Comments", arrayComments)
+            intent.putExtra("Ratings", arrayRatings)
+            startActivity(intent)
+            finish()
 
         }
 
