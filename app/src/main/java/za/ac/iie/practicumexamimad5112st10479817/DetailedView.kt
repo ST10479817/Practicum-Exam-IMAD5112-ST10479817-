@@ -1,6 +1,8 @@
 package za.ac.iie.practicumexamimad5112st10479817
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +24,11 @@ class DetailedView : AppCompatActivity() {
         val txtArtist = findViewById<TextView>(R.id.txtArtist)
         val txtRating = findViewById<TextView>(R.id.txtRating)
         val txtComment = findViewById<TextView>(R.id.txtComment)
+        val txtAvgRating = findViewById<TextView>(R.id.AvgRating)
+
+        val btnRating = findViewById<Button>(R.id.btnAvrage)
+        val btnShow = findViewById<Button>(R.id.btnShowPlaylist)
+        val btnBack = findViewById<Button>(R.id.btnReturn)
 
         val txtSongBuilder = StringBuilder()
         val txtArtistBuilder = StringBuilder()
@@ -42,10 +49,35 @@ class DetailedView : AppCompatActivity() {
             }
         }
 
-        txtSong.text = txtSongBuilder.toString()
-        txtArtist.text = txtArtistBuilder.toString()
-        txtRating.text = txtRatingBuilder.toString()
-        txtComment.text = txtCommentBuilder.toString()
+        btnShow.setOnClickListener {
+
+            txtSong.text = txtSongBuilder.toString()
+            txtArtist.text = txtArtistBuilder.toString()
+            txtRating.text = txtRatingBuilder.toString()
+            txtComment.text = txtCommentBuilder.toString()
+        }
+
+        btnRating.setOnClickListener {
+            if (Ratings != null && Ratings.isNotEmpty()){
+
+                val total = Ratings.sum()
+                val count = Ratings.count{it != 0}
+                val average = if (count >0) total.toDouble() / count else 0.0
+                txtAvgRating.text = "The Rating Average is: %.2f".format(average)
+
+            }else {
+                txtAvgRating.text = "Sorry there is no Rating Average."
+            }
+
+
+        }
+
+        btnBack.setOnClickListener {
+
+            val intent2 = Intent(this, MainActivity::class.java)
+            startActivity(intent2)
+            finish()
+        }
 
 
 

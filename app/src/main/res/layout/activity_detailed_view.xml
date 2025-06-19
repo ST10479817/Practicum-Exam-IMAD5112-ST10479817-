@@ -45,37 +45,33 @@
 
     <TextView
         android:id="@+id/txtSongs"
-        android:layout_width="101dp"
-        android:layout_height="wrap_content"
+        android:layout_width="99dp"
+        android:layout_height="183dp"
         android:layout_marginStart="1dp"
-        android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/txtArtist"
-        android:layout_width="102dp"
-        android:layout_height="wrap_content"
+        android:layout_width="105dp"
+        android:layout_height="182dp"
         android:layout_marginStart="1dp"
-        android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/txtSongs"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/txtRating"
-        android:layout_width="101dp"
-        android:layout_height="wrap_content"
+        android:layout_width="99dp"
+        android:layout_height="179dp"
         android:layout_marginStart="1dp"
-        android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/txtArtist"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/txtComment"
-        android:layout_width="99dp"
-        android:layout_height="17dp"
+        android:layout_width="100dp"
+        android:layout_height="174dp"
         android:layout_marginStart="1dp"
-        android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/txtRating"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -97,31 +93,54 @@
         android:id="@+id/btnShowPlaylist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="416dp" />
+        android:text="Show Playlist"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnAvrage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="549dp" />
+        android:text="Average Rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <Button
         android:id="@+id/btnReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="272dp"
-        tools:layout_editor_absoluteY="556dp" />
+        android:text="Return to Main Screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <TextView
         android:id="@+id/AvgRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="317dp" />
+        android:text="Press the Average Rating Button to see the Average Rating."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Detailed View"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

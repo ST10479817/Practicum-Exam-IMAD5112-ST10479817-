@@ -76,6 +76,9 @@ class MainActivity : AppCompatActivity() {
             }
             if (count == 4){
                 text.text = "All 4 songs has been added."
+                btnAddingToPlaylist.visibility = Button.GONE
+
+
                 return@setOnClickListener
             }
 
